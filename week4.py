@@ -51,7 +51,7 @@ class robot_wheel_controller:
         
         rospy.Rate(10)
         self.wheel_left_vel_sub = rospy.Subscriber("/wheel_vel_left", Float32, self.callback)
-        self.vel_pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
+        self.vel_pub = rospy.Publisher('/mobile_base/commands/velocity', Twist, queue_size=10)
 
     
     def callback(self, data):
