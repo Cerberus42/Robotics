@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Feb 15 12:43:46 2019
+Created on Fri Feb 15 2019
 
 @author: student
 """
