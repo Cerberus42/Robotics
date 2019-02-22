@@ -1,0 +1,17 @@
+To get the robot to connect to the terminals on the lab computers
+
+gedit ~/Downloads/rpi.ovpn
+sudo openvpn ~/Downloads/rpi.ovpn
+
+
+
+CONNECT THE FUCKING TERMINAL TO THE ROBOT YOU MUG. USE T MULE AND THEN JUPITER AND THE CONSOLE TO RUN CODE BECAUSE IT'S EASIER
+WHAT ARE YOU EVEN DOING WITH YOUR LIFE
+
+
+
+
+
+The command you have to use to make the robot move this is to pass values into the subscriber from thew Week 4 python script.
+
+rostopic pub /wheels_please std_msgs/Flat32 "data:1.0" -r 10 
