@@ -1,14 +1,10 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Feb 15 12:44:14 2019
-
 @author: student
 """
-
- -*- coding: utf-8 -*-
 """
 Spyder Editor
-
 This is a temporary script file.
 """
 
@@ -50,21 +46,24 @@ class robot_wheel_controller:
     def __init__(self):
         
         rospy.Rate(10)
-        self.wheel_left_vel_sub = rospy.Subscriber("/wheel_vel_left", Float32, self.callback)
+        self.wheels_please_pub = rospy.Subscriber("/wheels_please", Float32, self.callback)
+        #self.wheel_left_vel_sub = rospy.Publisher("/wheel_vel_left", Float32, queue_size=10)
         self.vel_pub = rospy.Publisher('/mobile_base/commands/velocity', Twist, queue_size=10)
-
+        #self.vel_sub = rospy.Subscriber("/wheels_please", self.callback, Float32)
+            
     
     def callback(self, data):
-        print("hello")
-        (v, a) = forward_kinematics(data.data, 0.0)
-        print "\n\nForward Kinematics\nv = %f,\ta = %f" % (v, a)
+           print("hello")
+           (v, a) = forward_kinematics(data.data, 0.0)
+           print "\n\nForward Kinematics\nv = %f,\ta = %f" % (v, a)
 
-        vel_data = Twist()
-        vel_data.linear.x = v
-        vel_data.angular.x = a
-        self.vel_pub.publish(vel_data)
-        
+           vel_data = Twist()
+           vel_data.linear.x = v
+           vel_data.angular.z = a
+           self.vel_pub.publish(vel_data)
+            
 print('Hello')
+
 rospy.init_node('robot_wheel_controller')
 iv = robot_wheel_controller()
 rospy.spin()
