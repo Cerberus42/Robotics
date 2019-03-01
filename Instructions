@@ -8,9 +8,15 @@ sudo openvpn ~/Downloads/rpi.ovpn
 CONNECT THE FUCKING TERMINAL TO THE ROBOT YOU MUG. USE T MULE AND THEN JUPITER AND THE CONSOLE TO RUN CODE BECAUSE IT'S EASIER
 WHAT ARE YOU EVEN DOING WITH YOUR LIFE
 
+This might take a little while (a few minutes). Then launch the new training arena (simulation) using:
 
+roslaunch uol_turtlebot_simulator object-search-training.launch
 
+rostopic list
+rostopic echo
+rostopic info
 
+run rviz: roslaunch turtlebot_rviz_launchers view_robot.launch
 
 The command you have to use to make the robot move this is to pass values into the subscriber from thew Week 4 python script.
 
